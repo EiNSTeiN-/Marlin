@@ -108,6 +108,7 @@
 #define HEATER_2_PIN -1
 #define HEATER_BED_PIN 3
 
+#define KILL_PIN -1
 
 #define SDPOWER -1
 #define SDSS -1 // SCL pin of I2C header
@@ -206,6 +207,7 @@
 	#define SDCARDDETECT -1 		
     #define SUICIDE_PIN -1						//has to be defined; otherwise Power_off doesn't work
 	
+    #define KILL_PIN -1
 	//Pins for 4bit LCD Support 
     #define LCD_PINS_RS 18 
     #define LCD_PINS_ENABLE 17
@@ -289,7 +291,7 @@
 #define FAN_PIN            4 // IO pin. Buffer needed
 #endif
 #define PS_ON_PIN          12
-#define KILL_PIN           -1
+#define KILL_PIN           41
 
 #define HEATER_0_PIN       10   // EXTRUDER 1
 #if MOTHERBOARD == 33
@@ -298,8 +300,8 @@
 #define HEATER_1_PIN       9    // EXTRUDER 2 (FAN On Sprinter)
 #endif
 #define HEATER_2_PIN       -1   
-#define TEMP_0_PIN         13   // ANALOG NUMBERING
-#define TEMP_1_PIN         15   // ANALOG NUMBERING
+#define TEMP_0_PIN         15   // ANALOG NUMBERING
+#define TEMP_1_PIN         -1   // ANALOG NUMBERING
 #define TEMP_2_PIN         -1   // ANALOG NUMBERING
 #define HEATER_BED_PIN     8    // BED
 #define TEMP_BED_PIN       14   // ANALOG NUMBERING
@@ -308,9 +310,9 @@
 
   #ifdef NEWPANEL
   //arduino pin which triggers an piezzo beeper
-    #define BEEPER 33			// Beeper on AUX-4
+    #define BEEPER 37			// Beeper on AUX-4
 
-    #define LCD_PINS_RS 16 
+    #define LCD_PINS_RS 16
     #define LCD_PINS_ENABLE 17
     #define LCD_PINS_D4 23
     #define LCD_PINS_D5 25 
@@ -318,15 +320,15 @@
     #define LCD_PINS_D7 29
     
     //buttons are directly attached using AUX-2
-    #define BTN_EN1 37
-    #define BTN_EN2 35
-    #define BTN_ENC 31  //the click
+    #define BTN_EN1 31
+    #define BTN_EN2 33
+    #define BTN_ENC 35  //the click
     
     #define BLEN_C 2
     #define BLEN_B 1
     #define BLEN_A 0
     
-    #define SDCARDDETECT -1		// Ramps does not use this port
+    #define SDCARDDETECT 49		// Ramps does not use this port
     
       //encoder rotation values
     #define encrot0 0
