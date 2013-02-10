@@ -235,7 +235,7 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 #define X_MIN_POS 0
 #define Y_MAX_POS 205
 #define Y_MIN_POS 0
-#define Z_MAX_POS 200
+#define Z_MAX_POS 150
 #define Z_MIN_POS 0
 
 #define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS)
@@ -305,11 +305,11 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
   #define LCD_HEIGHT 4
   
 // Preheat Constants
-  #define PLA_PREHEAT_HOTEND_TEMP 180 
-  #define PLA_PREHEAT_HPB_TEMP 70
+  #define PLA_PREHEAT_HOTEND_TEMP 175 
+  #define PLA_PREHEAT_HPB_TEMP 60
   #define PLA_PREHEAT_FAN_SPEED 255		// Insert Value between 0 and 255
 
-  #define ABS_PREHEAT_HOTEND_TEMP 240
+  #define ABS_PREHEAT_HOTEND_TEMP 225
   #define ABS_PREHEAT_HPB_TEMP 100
   #define ABS_PREHEAT_FAN_SPEED 255		// Insert Value between 0 and 255
 
