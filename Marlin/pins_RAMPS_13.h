@@ -8,7 +8,7 @@
  *  RAMPS_13_EFF (Extruder, Fan, Fan)
  *  RAMPS_13_EEF (Extruder, Extruder, Fan)
  *  RAMPS_13_SF  (Spindle, Controller Fan)
- * 
+ *
  *  RAMPS_14_EFB (Extruder, Fan, Bed)
  *  RAMPS_14_EEB (Extruder, Extruder, Bed)
  *  RAMPS_14_EFF (Extruder, Fan, Fan)
@@ -117,7 +117,7 @@
 #define HEATER_2_PIN       -1
 
 #define TEMP_0_PIN         13   // ANALOG NUMBERING
-#define TEMP_1_PIN         15   // ANALOG NUMBERING
+#define TEMP_1_PIN         14   // ANALOG NUMBERING
 #define TEMP_2_PIN         -1   // ANALOG NUMBERING
 
 #if MB(RAMPS_13_EFF) || MB(RAMPS_13_EEF) || MB(RAMPS_13_SF)
@@ -126,7 +126,7 @@
   #define HEATER_BED_PIN    8    // BED
 #endif
 
-#define TEMP_BED_PIN         14   // ANALOG NUMBERING
+#define TEMP_BED_PIN         15   // ANALOG NUMBERING
 
 #if ENABLED(Z_PROBE_SLED)
   #define SLED_PIN           -1
