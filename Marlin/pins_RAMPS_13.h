@@ -67,6 +67,12 @@
 #define SDSS               53
 #define LED_PIN            13
 
+#if ENABLED(PRUSA_SUPER_SWITCH)
+  #define E_MUX0_PIN
+  #define E_MUX1_PIN
+  #define E_MUX2_PIN 
+#endif
+
 #if ENABLED(FILAMENT_SENSOR)  // FMM added for Filament Extruder
   // define analog pin for the filament width sensor input
   // Use the RAMPS 1.4 Analog input 5 on the AUX2 connector

@@ -132,6 +132,11 @@
   #error Unknown MOTHERBOARD value set in Configuration.h
 #endif
 
+#if defined(PRUSA_SUPER_SWITCH) &&
+    (!defined(E_MUX0_PIN) || !defined(E_MUX1_PIN) || !defined(E_MUX2_PIN))
+  #error PRUSA_SUPER_SWITCH is configured but MUX pins are not defined for this board.
+#endif
+
 // List of pins which to ignore when asked to change by gcode, 0 and 1 are RX and TX, do not mess with those!
 #define _E0_PINS E0_STEP_PIN, E0_DIR_PIN, E0_ENABLE_PIN, HEATER_0_PIN, analogInputToDigitalPin(TEMP_0_PIN),
 #define _E1_PINS
@@ -260,4 +265,3 @@
 #define HAS_DIGIPOTSS (DIGIPOTSS_PIN >= 0)
 
 #endif //__PINS_H
-

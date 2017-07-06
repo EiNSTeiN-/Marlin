@@ -84,6 +84,9 @@ Here are some standard links for getting your machine calibrated:
 // This defines the number of extruders
 // :[1,2,3,4]
 #define EXTRUDERS 1
+// Prusa Super Switch is connected to extruder #1 for single hotend multi-color multiplexing.
+#define PRUSA_SUPER_SWITCH
+#define PRUSA_SUPER_SWITCH_MOTORS 4
 
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
