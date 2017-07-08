@@ -68,9 +68,9 @@
 #define LED_PIN            13
 
 #if ENABLED(PRUSA_SUPER_SWITCH)
-  #define E_MUX0_PIN
-  #define E_MUX1_PIN
-  #define E_MUX2_PIN 
+  #define E_MUX0_PIN 63
+  #define E_MUX1_PIN 40
+  #define E_MUXV_PIN 42
 #endif
 
 #if ENABLED(FILAMENT_SENSOR)  // FMM added for Filament Extruder

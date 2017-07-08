@@ -132,8 +132,8 @@
   #error Unknown MOTHERBOARD value set in Configuration.h
 #endif
 
-#if defined(PRUSA_SUPER_SWITCH) &&
-    (!defined(E_MUX0_PIN) || !defined(E_MUX1_PIN) || !defined(E_MUX2_PIN))
+#if ENABLED(PRUSA_SUPER_SWITCH) && \
+    (!defined(E_MUX0_PIN) || !defined(E_MUX1_PIN) || !defined(E_MUXV_PIN))
   #error PRUSA_SUPER_SWITCH is configured but MUX pins are not defined for this board.
 #endif
 

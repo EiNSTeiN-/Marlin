@@ -10,10 +10,10 @@
 
 #ifdef PRUSA_SUPER_SWITCH
   #define MAXIMUM_TOOL_NUMBER PRUSA_SUPER_SWITCH_MOTORS
-  #define setSuperSwitchMultiplex(pin0, pin1, pin2) \
-    WRITE(E_MUX0_PIN, HIGH); \
-    WRITE(E_MUX1_PIN, LOW); \
-    WRITE(E_MUX2_PIN, LOW);
+  #define setSuperSwitchMultiplex(pin0, pin1) \
+    WRITE(E_MUX0_PIN, pin0); \
+    WRITE(E_MUX1_PIN, pin1); \
+    WRITE(E_MUXV_PIN, HIGH);
 #else
   #define MAXIMUM_TOOL_NUMBER EXTRUDERS
 #endif

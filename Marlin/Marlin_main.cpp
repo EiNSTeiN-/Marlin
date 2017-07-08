@@ -5574,25 +5574,30 @@ inline void gcode_T(uint8_t tmp_extruder) {
 
       pinMode(E_MUX0_PIN, OUTPUT);
       pinMode(E_MUX1_PIN, OUTPUT);
-      pinMode(E_MUX2_PIN, OUTPUT);
+      pinMode(E_MUXV_PIN, OUTPUT);
 
       delay(100);
+
+      SERIAL_ECHO_START;
+      SERIAL_ECHO(MSG_ACTIVE_EXTRUDER);
+      SERIAL_PROTOCOLLN((int)target_extruder);
+
       switch (target_extruder) {
       case 1:
-        setSuperSwitchMultiplex(HIGH, LOW, LOW);
+        setSuperSwitchMultiplex(HIGH, LOW);
         break;
       case 2:
-        setSuperSwitchMultiplex(LOW, HIGH, LOW);
+        setSuperSwitchMultiplex(LOW, HIGH);
         break;
       case 3:
-        setSuperSwitchMultiplex(HIGH, HIGH, LOW);
+        setSuperSwitchMultiplex(HIGH, HIGH);
         break;
       default:
-        setSuperSwitchMultiplex(LOW, LOW, LOW);
+        setSuperSwitchMultiplex(LOW, LOW);
         break;
       }
 
-      active_extruder = target_extruder;
+      //active_extruder = target_extruder;
       delay(100);
     #else
       #if EXTRUDERS > 1
@@ -5680,11 +5685,11 @@ inline void gcode_T(uint8_t tmp_extruder) {
         #endif // EXT_SOLENOID
 
       #endif // EXTRUDERS > 1
-    #endif
 
-    SERIAL_ECHO_START;
-    SERIAL_ECHO(MSG_ACTIVE_EXTRUDER);
-    SERIAL_PROTOCOLLN((int)active_extruder);
+      SERIAL_ECHO_START;
+      SERIAL_ECHO(MSG_ACTIVE_EXTRUDER);
+      SERIAL_PROTOCOLLN((int)active_extruder);
+    #endif
   }
 }
 
