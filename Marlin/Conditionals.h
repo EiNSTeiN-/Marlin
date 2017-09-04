@@ -8,6 +8,16 @@
   #define M_PI 3.1415926536
 #endif
 
+#ifdef PRUSA_SUPER_SWITCH
+  #define MAXIMUM_TOOL_NUMBER PRUSA_SUPER_SWITCH_MOTORS
+  #define setSuperSwitchMultiplex(pin0, pin1) \
+    WRITE(E_MUX0_PIN, pin0); \
+    WRITE(E_MUX1_PIN, pin1); \
+    WRITE(E_MUXV_PIN, HIGH);
+#else
+  #define MAXIMUM_TOOL_NUMBER EXTRUDERS
+#endif
+
 #ifndef CONFIGURATION_LCD // Get the LCD defines which are needed first
 
   #define PIN_EXISTS(PN) (defined(PN##_PIN) && PN##_PIN >= 0)
